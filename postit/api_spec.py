@@ -9,6 +9,11 @@ API_SPEC = {
                 'model': 'postit.models.Team',
             },
             '*': {
+                'id': {
+                    '.readonly': {},
+                    '.drf_field': {},
+                    '.serial': {}
+                },
                 'name': {
                     '.required': {},
                     '.drf_field': {},
@@ -27,6 +32,11 @@ API_SPEC = {
                 'model': 'postit.models.Student',
             },
             '*': {
+                'id': {
+                    '.readonly': {},
+                    '.drf_field': {},
+                    '.serial': {}
+                },
                 'first_name': {
                     '.required': {},
                     '.drf_field': {},
