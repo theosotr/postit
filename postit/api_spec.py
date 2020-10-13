@@ -84,7 +84,7 @@ API_SPEC = {
                 },
                 'image_url': {
                     '.drf_field': {},
-                    '.string': {'max_length': 50},
+                    '.file': {}
                 },
             },
             '.actions=': {

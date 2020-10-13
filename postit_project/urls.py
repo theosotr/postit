@@ -14,8 +14,10 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from apimas.drf import django_rest
 from postit.api_spec import API_SPEC
 
@@ -25,3 +27,4 @@ adapter.construct(API_SPEC)
 
 urlpatterns = adapter.urls.values()
 urlpatterns.append(url(r'^admin/', admin.site.urls))
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

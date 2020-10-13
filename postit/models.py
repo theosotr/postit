@@ -24,4 +24,4 @@ class Student(models.Model):
     skills = models.TextField(blank=False)
     preferred_teams = models.TextField(blank=False)
     team = models.ForeignKey(Team, blank=True, null=True)
-    image_url = models.CharField(max_length=50, blank=False)
+    image_url = models.FileField(blank=False, upload_to='media')
