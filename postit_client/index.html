@@ -17,32 +17,27 @@
     <script>
 	  window.RESTool = {
           config: {
-  "name": "RESTool App",
+  "name": "Teams Creation Tool",
   "favicon": "https://www.commoninja.com/public/favicon.ico",
-  "baseUrl": "http://localhost:8000/api/",
+  "baseUrl": "https://restool-sample-app.herokuapp.com/api",
   "pages": [
     {
-      "name": "Cast & Characters",
+      "name": "Students List",
       "id": "students",
-      "description": "Manage GOT characters location and budget.",
+      "description": "Programming 2 class Students.",
       "methods": {
         "getAll": {
           "label": "Get All",
-          "dataPath": "",
-          "url": "students/",
+          "dataPath": "items",
+          "url": "/students",
           "display": {
             "type": "cards"
           },
           "fields": [
             {
-              "name": "image_url",
-              "type": "image",
-              "label": "Thumbnail"
-            },
-            {
-              "name": "am",
+              "name": "id",
               "type": "text",
-              "label": "AM"
+              "label": "ID"
 
             },
             {
@@ -56,9 +51,199 @@
               "type": "text",
               "label": "Last Name"
 
+            },
+            
+            {
+              "name": "am",
+              "type": "text",
+              "label": "AM"
+            },
+            {
+              "name": "email",
+              "type": "text",
+              "label": "email"
+
+            },
+            {
+              "name": "github_username",
+              "type": "text",
+              "label": "Github username"
+
+            },
+            {
+              "name": "linkedin_url",
+              "type": "text",
+              "label": "LinkedIn url"
+
+            },
+            
+            {
+              "name": "about",
+              "type": "text",
+              "label": "About"
+            },
+            {
+              "name": "knowledge",
+              "type": "text",
+              "label": "Knowledge"
+
+            },
+            {
+              "name": "skills",
+              "type": "text",
+              "label": "Skills"
+
+            },
+            {
+              "name": "preferred_teams",
+              "type": "text",
+              "label": "Preferred Teams"
+
+            },
+            
+            {
+              "name": "team",
+              "type": "text",
+              "label": "Team"
+
+            },
+            {
+              "name": "image_url",
+              "type": "file",
+              "label": "Image"
+
+            },
+            
+            {
+              "name": "is_free",
+              "type": "boolean",
+              "label": "Free"
+
             }
         ]
-       }
+       },
+"post": {
+          "url": "/character",
+          "fields": [
+            {
+              "name": "id",
+              "type": "text",
+              "label": "ID"
+
+            },
+            {
+              "name": "first_name",
+              "type": "text",
+              "label": "First Name"
+
+            },
+            {
+              "name": "last_name",
+              "type": "text",
+              "label": "Last Name"
+
+            },
+            
+            {
+              "name": "am",
+              "type": "text",
+              "label": "AM"
+            },
+            {
+              "name": "email",
+              "type": "text",
+              "label": "email"
+
+            },
+            {
+              "name": "github_username",
+              "type": "text",
+              "label": "Github username"
+
+            },
+            {
+              "name": "linkedin_url",
+              "type": "text",
+              "label": "LinkedIn url"
+
+            },
+            
+            {
+              "name": "about",
+              "type": "text",
+              "label": "About"
+            },
+            {
+              "name": "knowledge",
+              "type": "text",
+              "label": "Knowledge"
+
+            },
+            {
+              "name": "skills",
+              "type": "text",
+              "label": "Skills"
+
+            },
+            {
+              "name": "preferred_teams",
+              "type": "text",
+              "label": "Preferred Teams"
+
+            },
+            {
+              "name": "image_url",
+              "type": "file",
+              "label": "Image"
+
+            }
+          ]
+        },
+	      "customLabels": {
+    "buttons": {
+      "addItem": "+ New item",
+      "editItem": "Modify"
+    },
+    "formTitles": {
+      "addItem": "New item form"
+    },
+    "placeholders": {
+      "color": "Enter color in HEX format..."
+    }
+  }
+      }
+    },
+    {
+      "name": "Teams Assignments",
+      "id": "employees",
+      "description": "Teams Assignments.",
+      "methods": {
+        "getAll": {
+          "label": "Get All",
+          "dataPath": "items",
+          "url": "/teams",
+          
+          "display": {
+            "type": "table"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "text",
+              "label": "ID"
+            },
+            {
+              "name": "name",
+              "type": "text",
+              "label": "Name"
+            },
+            {
+              "name": "Teams",
+              "type": "text",
+              "label": "team"
+            }
+          ]
+        }
       }
     }
   ]
