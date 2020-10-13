@@ -10,6 +10,9 @@ class Team(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, blank=False)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Student(models.Model):
     id = models.AutoField(primary_key=True)
