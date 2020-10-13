@@ -20,15 +20,18 @@ class Student(models.Model):
     last_name = models.CharField(max_length=50, blank=False)
     am = models.BigIntegerField(blank=False)
     email = models.EmailField(blank=False)
-    github_username = models.CharField(max_length=50, blank=False)
-    linkedin_url = models.CharField(max_length=50, blank=False)
+    github_username = models.CharField(max_length=50, blank=True)
+    linkedin_url = models.CharField(max_length=50, blank=True)
     about = models.TextField(blank=False)
     knowledge = models.TextField(blank=False)
     skills = models.TextField(blank=False)
-    preferred_teams = models.TextField(blank=False)
+    preferred_teams = models.TextField(blank=True)
     team = models.ForeignKey(Team, blank=True, null=True)
-    image_url = models.FileField(blank=False, upload_to='media')
+    image_url = models.FileField(blank=False, upload_to='media', null=True)
 
+    @property
+    def available(self):
+        return self.team is None
 
     def __unicode__(self):
         return str(self.am) + " (" + self.first_name + " " + self.last_name + ")"

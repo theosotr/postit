@@ -58,12 +58,12 @@ API_SPEC = {
                     '.email': {}
                 },
                 'github_username': {
-                    '.required': {},
+                    '.blankable': {},
                     '.drf_field': {},
                     '.string': {'max_length': 10},
                 },
                 'linkedin_url': {
-                    '.required': {},
+                    '.blankable': {},
                     '.drf_field': {},
                     '.string': {'max_length': 50},
                 },
@@ -83,13 +83,18 @@ API_SPEC = {
                     '.text': {'max_length': 150},
                 },
                 'preferred_teams': {
-                    '.required': {},
+                    '.blankable': {},
                     '.drf_field': {},
                     '.text': {'max_length': 150},
                 },
                 'team': {
                     '.drf_field': {},
                     '.ref': {'to': 'api/teams'},
+                    '.readonly': {}
+                },
+                'available': {
+                    '.drf_field': {},
+                    '.boolean': {},
                     '.readonly': {}
                 },
                 'image_url': {

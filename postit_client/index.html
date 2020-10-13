@@ -19,7 +19,7 @@
           config: {
   "name": "Teams Creation Tool",
   "favicon": "https://www.commoninja.com/public/favicon.ico",
-  "baseUrl": "https://restool-sample-app.herokuapp.com/api",
+  "baseUrl": "http://127.0.0.1:8000/api",
   "pages": [
     {
       "name": "Students List",
@@ -28,17 +28,16 @@
       "methods": {
         "getAll": {
           "label": "Get All",
-          "dataPath": "items",
-          "url": "/students",
+          "dataPath": "",
+          "url": "/students/",
           "display": {
             "type": "cards"
           },
           "fields": [
             {
-              "name": "id",
-              "type": "text",
-              "label": "ID"
-
+              "name": "image_url",
+              "type": "image",
+              "label": "image"
             },
             {
               "name": "first_name",
@@ -73,31 +72,31 @@
             {
               "name": "linkedin_url",
               "type": "text",
-              "label": "LinkedIn url"
+              "label": "LinkedIn"
 
             },
             
             {
               "name": "about",
               "type": "text",
-              "label": "About"
+              "label": "I am..."
             },
             {
               "name": "knowledge",
               "type": "text",
-              "label": "Knowledge"
+              "label": "I know..."
 
             },
             {
               "name": "skills",
               "type": "text",
-              "label": "Skills"
+              "label": "I can..."
 
             },
             {
               "name": "preferred_teams",
               "type": "text",
-              "label": "Preferred Teams"
+              "label": "Preferred Team"
 
             },
             
@@ -105,41 +104,28 @@
               "name": "team",
               "type": "text",
               "label": "Team"
-
             },
             {
-              "name": "image_url",
-              "type": "file",
-              "label": "Image"
-
-            },
-            
-            {
-              "name": "is_free",
-              "type": "boolean",
-              "label": "Free"
-
+                "name": "available",
+                "type": "boolean",
+                "label": "Available"
             }
         ]
        },
-"post": {
-          "url": "/character",
+       "post": {
+          "url": "/students/",
           "fields": [
-            {
-              "name": "id",
-              "type": "text",
-              "label": "ID"
-
-            },
             {
               "name": "first_name",
               "type": "text",
+              "required": true,
               "label": "First Name"
 
             },
             {
               "name": "last_name",
               "type": "text",
+              "required": true,
               "label": "Last Name"
 
             },
@@ -147,11 +133,13 @@
             {
               "name": "am",
               "type": "text",
+              "required": true,
               "label": "AM"
             },
             {
               "name": "email",
-              "type": "text",
+              "type": "email",
+              "required": true,
               "label": "email"
 
             },
@@ -164,88 +152,77 @@
             {
               "name": "linkedin_url",
               "type": "text",
-              "label": "LinkedIn url"
+              "label": "LinkedIn"
 
             },
             
             {
               "name": "about",
               "type": "text",
-              "label": "About"
+              "required": true,
+              "label": "I am..."
             },
             {
               "name": "knowledge",
               "type": "text",
-              "label": "Knowledge"
+              "required": true,
+              "label": "I know..."
 
             },
             {
               "name": "skills",
               "type": "text",
-              "label": "Skills"
+              "required": true,
+              "label": "I can..."
 
             },
             {
               "name": "preferred_teams",
               "type": "text",
-              "label": "Preferred Teams"
-
+              "label": "Preferred Team"
             },
             {
               "name": "image_url",
               "type": "file",
-              "label": "Image"
-
-            }
-          ]
-        },
-	      "customLabels": {
-    "buttons": {
-      "addItem": "+ New item",
-      "editItem": "Modify"
-    },
-    "formTitles": {
-      "addItem": "New item form"
-    },
-    "placeholders": {
-      "color": "Enter color in HEX format..."
-    }
-  }
-      }
-    },
-    {
-      "name": "Teams Assignments",
-      "id": "employees",
-      "description": "Teams Assignments.",
-      "methods": {
-        "getAll": {
-          "label": "Get All",
-          "dataPath": "items",
-          "url": "/teams",
-          
-          "display": {
-            "type": "table"
-          },
-          "fields": [
-            {
-              "name": "id",
-              "type": "text",
-              "label": "ID"
-            },
-            {
-              "name": "name",
-              "type": "text",
-              "label": "Name"
-            },
-            {
-              "name": "Teams",
-              "type": "text",
-              "label": "team"
+              "label": "Photo"
             }
           ]
         }
       }
     }
+    //{
+    //  "name": "Teams Assignments",
+    //  "id": "employees",
+    //  "description": "Teams Assignments.",
+    //  "methods": {
+    //    "getAll": {
+    //      "label": "Get All",
+    //      "dataPath": "items",
+    //      "url": "/teams/",
+    //      
+    //      "display": {
+    //        "type": "table"
+    //      },
+    //      "fields": [
+    //        {
+    //          "name": "id",
+    //          "type": "text",
+    //          "label": "ID"
+    //        },
+    //        {
+    //          "name": "name",
+    //          "type": "text",
+    //          "label": "Name"
+    //        },
+    //        {
+    //          "name": "Teams",
+    //          "type": "text",
+    //          "label": "team"
+    //        }
+    //      ]
+    //    }
+    //  }
+    //}
   ]
 }
 	  };

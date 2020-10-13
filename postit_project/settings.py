@@ -87,9 +87,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'postit',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'orm_testing',
+        'PASSWORD': 'orm_testing',
         'PORT': 3306,
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
 
