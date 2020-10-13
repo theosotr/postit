@@ -7,7 +7,7 @@ from django.db import models
 
 
 class Team(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100, blank=False)
 
     def __unicode__(self):

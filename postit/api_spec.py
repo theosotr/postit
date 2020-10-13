@@ -10,9 +10,9 @@ API_SPEC = {
             },
             '*': {
                 'id': {
-                    '.readonly': {},
                     '.drf_field': {},
-                    '.serial': {}
+                    '.integer': {},
+                    '.required': {}
                 },
                 'name': {
                     '.required': {},
