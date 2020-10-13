@@ -25,3 +25,10 @@ class Student(models.Model):
     preferred_teams = models.TextField(blank=False)
     team = models.ForeignKey(Team, blank=True, null=True)
     image_url = models.FileField(blank=False, upload_to='media')
+
+
+    def __unicode__(self):
+        return str(self.am) + " (" + self.first_name + " " + self.last_name + ")"
+
+    class Meta:
+        ordering = ('am',)

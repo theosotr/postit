@@ -91,6 +91,7 @@ API_SPEC = {
                 '.create': {},
                 '.list': {},
                 '.retrieve': {},
+                '.update': {}
             }
         },
     }
