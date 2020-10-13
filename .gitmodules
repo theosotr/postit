@@ -1,0 +1,3 @@
+[submodule "apimas"]
+	path = apimas
+	url = https://github.com/theosotr/apimas
