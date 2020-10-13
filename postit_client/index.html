@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://unpkg.com/restool"></script>
+    <title>RESTool App</title>
+  </head>
+  <body>
+    <script>
+	  window.RESTool = {
+          config: {
+  "name": "RESTool App",
+  "favicon": "https://www.commoninja.com/public/favicon.ico",
+  "baseUrl": "http://localhost:8000/api/",
+  "pages": [
+    {
+      "name": "Cast & Characters",
+      "id": "students",
+      "description": "Manage GOT characters location and budget.",
+      "methods": {
+        "getAll": {
+          "label": "Get All",
+          "dataPath": "",
+          "url": "students/",
+          "display": {
+            "type": "cards"
+          },
+          "fields": [
+            {
+              "name": "image_url",
+              "type": "image",
+              "label": "Thumbnail"
+            },
+            {
+              "name": "am",
+              "type": "text",
+              "label": "AM"
+
+            }
+        ]
+            
+       }
+      }
+    }
+  ]
+}
+	  };
+	</script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
