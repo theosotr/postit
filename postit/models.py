@@ -14,7 +14,14 @@ class Team(models.Model):
         return self.name
 
 
+class CustomManager(models.Manager):
+    def get_queryset(self):
+        return super(CustomManager, self).get_queryset().filter(team=None)
+
+
 class Student(models.Model):
+    objects = CustomManager()
+    all_students = models.Manager()
     id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=50, blank=False)
     last_name = models.CharField(max_length=50, blank=False)
@@ -34,7 +41,11 @@ class Student(models.Model):
         return self.team is None
 
     def __unicode__(self):
-        return str(self.am) + " (" + self.first_name + " " + self.last_name + ")"
+        if self.team is None:
+	    return str(self.am) + " (" + self.first_name + " " + self.last_name + ")"
+        else:
+	    return str(self.am) + " (" + self.first_name + " " + self.last_name + ") => " + self.team.name
+
 
     class Meta:
         ordering = ('am',)
