@@ -11,8 +11,10 @@ class Team(models.Model):
     name = models.CharField(max_length=100, blank=False)
 
     def __unicode__(self):
-        return self.name
+        return str(self.id) + "(" + self.name + ")"
 
+    class Meta:
+        ordering = ('name',)
 
 class CustomManager(models.Manager):
     def get_queryset(self):
